@@ -1,5 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from 'src/prisma.service';
+import { UpdatePositionDTO } from './dto/update-position.dto';
+import { CreatePositionDTO } from './dto/create-position.dto';
 
 @Injectable()
 export class PositionService {
@@ -21,13 +23,13 @@ export class PositionService {
     return position;
   }
 
-  async createPosition(data) {
+  async createPosition(data: CreatePositionDTO) {
     return this.prisma.position.create({
       data,
     });
   }
 
-  async updatePosition(id: number, data) {
+  async updatePosition(id: number, data: UpdatePositionDTO) {
     const position = await this.prisma.position.findUnique({
       where: { id },
     });

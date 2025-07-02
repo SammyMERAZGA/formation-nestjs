@@ -9,6 +9,8 @@ import {
   Put,
 } from '@nestjs/common';
 import { PositionService } from './position.service';
+import { CreatePositionDTO } from './dto/create-position.dto';
+import { UpdatePositionDTO } from './dto/update-position.dto';
 
 @Controller('position')
 export class PositionController {
@@ -25,12 +27,15 @@ export class PositionController {
   }
 
   @Post('/create')
-  createPosition(@Body() data: any) {
+  createPosition(@Body() data: CreatePositionDTO) {
     return this.positionService.createPosition(data);
   }
 
   @Put('/:id')
-  updatePosition(@Param('id', ParseIntPipe) id: number, @Body() data: any) {
+  updatePosition(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() data: UpdatePositionDTO,
+  ) {
     return this.positionService.updatePosition(id, data);
   }
 

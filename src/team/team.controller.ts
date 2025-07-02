@@ -9,6 +9,8 @@ import {
   Put,
 } from '@nestjs/common';
 import { TeamService } from './team.service';
+import { CreateTeamDTO } from './dto/create-team.dto';
+import { UpdateTeamDTO } from './dto/update-team.dto';
 
 @Controller('team')
 export class TeamController {
@@ -25,12 +27,15 @@ export class TeamController {
   }
 
   @Post('/create')
-  createTeam(@Body() data: any) {
+  createTeam(@Body() data: CreateTeamDTO) {
     return this.teamService.createTeam(data);
   }
 
   @Put('/:id')
-  updateTeam(@Param('id', ParseIntPipe) id: number, @Body() data: any) {
+  updateTeam(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() data: UpdateTeamDTO,
+  ) {
     return this.teamService.updateTeam(id, data);
   }
 
