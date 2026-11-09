@@ -22,6 +22,10 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+## Playlist Youtube 
+
+https://www.youtube.com/playlist?list=PLNEpbO9HTVNQVPu4uUOqGVVKiHoIl4_xR
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
